@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "900977960221",
+    "firebase_url": "https://easy-attendance-52b26.firebaseio.com",
+    "project_id": "easy-attendance-52b26",
+    "storage_bucket": "easy-attendance-52b26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900977960221:android:f4f4488309971ae87eadf4",
+        "android_client_info": {
+          "package_name": "com.example.easyattendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "900977960221-7egautjjknv9b12775b5jupk5eq7r1bn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.easyattendance",
+            "certificate_hash": "e95f8cc06bcfe7dfeda3421ea79dc2a1b8e29ad2"
+          }
+        },
+        {
+          "client_id": "900977960221-2l2mjlv9egvmtue0b307estu8qnkanfm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5hSgwKkfllldNVovf8l5ieKwHoWRl_0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "900977960221-2l2mjlv9egvmtue0b307estu8qnkanfm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
