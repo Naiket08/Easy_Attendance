@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFC"
+    tools:context=".SplashScreen">
+
+    <TextView
+        android:id="@+id/textViewEasy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/segoe_ui"
+        android:text="@string/easy"
+        android:letterSpacing="0.15"
+        android:textColor="#707070"
+        android:textSize="@dimen/_32ssp"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/_210sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAttendance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/segoe_ui"
+        android:text="@string/attendance"
+        android:letterSpacing="0.1"
+        android:textColor="#707070"
+        android:textSize="@dimen/_22ssp"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/_40sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewEasy"/>
+
+    <TextView
+        android:id="@+id/textViewSlogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/slogan"
+        android:fontFamily="@font/segoe_ui"
+        android:textColor="#707070"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_80sdp"
+        app:layout_constraintTop_toBottomOf="@id/textViewAttendance"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <ImageView
+        android:id="@+id/imageViewRectangleOne"
+        android:layout_width="@dimen/_420sdp"
+        android:layout_height="@dimen/_410sdp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/rectangle_one"
+        android:layout_marginEnd="@dimen/_320sdp"
+        android:layout_marginBottom="@dimen/_600sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    
+    <ImageView
+        android:id="@+id/imageViewRectangleTwo"
+        android:layout_width="@dimen/_420sdp"
+        android:layout_height="@dimen/_410sdp"
+        android:src="@drawable/rectangle_two"
+        android:adjustViewBounds="true"
+        android:layout_marginStart="@dimen/_470sdp"
+        android:layout_marginBottom="@dimen/_200sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/imageViewRectangleThree"
+        android:layout_width="@dimen/_420sdp"
+        android:layout_height="@dimen/_410sdp"
+        android:src="@drawable/rectangle_one"
+        android:adjustViewBounds="true"
+        android:layout_marginStart="@dimen/_360sdp"
+        android:layout_marginTop="@dimen/_500sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
