@@ -7,6 +7,96 @@
     android:background="@drawable/loginscreenbackground"
     tools:context=".LoginScreen">
 
-    
+    <ImageView
+        android:id="@+id/imageViewRegisterPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_person_24"
+        android:layout_marginTop="@dimen/_70sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextRegisterName"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:hint="Enter your name"
+        android:textColorHint="#FFF"
+        android:backgroundTint="#FFF"
+        android:textColor="#FFF"
+        android:inputType="text"
+        android:fontFamily="@font/segoe_ui"
+        android:drawableLeft="@drawable/ic_baseline_name_icon"
+        android:drawablePadding="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@id/imageViewRegisterPerson"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextRegisterMobile"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:hint="Enter your mobille number"
+        android:textColorHint="#FFF"
+        android:backgroundTint="#FFF"
+        android:textColor="#FFF"
+        android:inputType="phone"
+        android:fontFamily="@font/segoe_ui"
+        android:drawableLeft="@drawable/ic_baseline_phone_iphone_24"
+        android:drawablePadding="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintTop_toBottomOf="@id/editTextRegisterName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextRegisterEmail"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:hint="Enter your Email address"
+        android:textColorHint="#FFF"
+        android:backgroundTint="#FFF"
+        android:textColor="#FFF"
+        android:inputType="textEmailAddress"
+        android:fontFamily="@font/segoe_ui"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:drawablePadding="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintTop_toBottomOf="@id/editTextRegisterMobile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextRegisterPassword"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:hint="Enter Password"
+        android:textColorHint="#FFF"
+        android:backgroundTint="#FFF"
+        android:textColor="#FFF"
+        android:inputType="textPassword"
+        android:fontFamily="@font/segoe_ui"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintTop_toBottomOf="@id/editTextRegisterEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:text="Register"
+        android:textSize="@dimen/_14ssp"
+        android:textAllCaps="true"
+        android:letterSpacing="0.05"
+        android:background="@drawable/loginbuttonbackground"
+        android:layout_marginTop="@dimen/_40sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextRegisterPassword"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
