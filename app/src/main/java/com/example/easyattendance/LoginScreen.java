@@ -1,16 +1,25 @@
 package com.example.easyattendance;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginScreen extends AppCompatActivity {
 
@@ -18,6 +27,8 @@ public class LoginScreen extends AppCompatActivity {
     EditText editTextEmail, editTextPassword;
     ImageView imageViewPerson;
     Button buttonLogin;
+    ProgressBar progressBarLoginScreen;
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,24 +44,61 @@ public class LoginScreen extends AppCompatActivity {
         editTextPassword = (EditText)findViewById(R.id.editTextPassword);
         imageViewPerson = (ImageView)findViewById(R.id.imageViewPerson);
         buttonLogin = (Button)findViewById(R.id.buttonLogin);
+        progressBarLoginScreen = (ProgressBar)findViewById(R.id.progressBarLoginScreen);
 
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(editTextEmail.getText().toString().equals("patelnaiket08@gmail.com")&&editTextPassword.getText().toString().equals("12345678")){
-                    Toast.makeText(LoginScreen.this, "Login Successfull", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    editTextPassword.setError("Wrong Password");
-                }
-            }
-        });
+        //FirebaseAuth initialization
+        fAuth = FirebaseAuth.getInstance();
+
+        if(fAuth.getCurrentUser() != null){
+            startActivity(new Intent(LoginScreen.this,HomeScreen.class));
+            finish();
+        }
 
         textViewSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(LoginScreen.this, "Work under progress", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginScreen.this, RegisterScreen.class));
+                finish();
             }
         });
+
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = editTextEmail.getText().toString().trim();
+                String pwd = editTextPassword.getText().toString().trim();
+
+                if (TextUtils.isEmpty(email)) {
+                    editTextEmail.setError("Email ID is required");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(pwd)) {
+                    editTextPassword.setError("Password is required");
+                    return;
+                }
+
+                if (pwd.length() < 6) {
+                    editTextPassword.setError("Length of password must be >= 6 characters");
+                }
+
+                progressBarLoginScreen.setVisibility(View.VISIBLE);
+
+                fAuth.signInWithEmailAndPassword(email,pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(LoginScreen.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginScreen.this, HomeScreen.class));
+                        }
+                        else{
+                            Toast.makeText(LoginScreen.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            progressBarLoginScreen.setVisibility(View.INVISIBLE);
+                        }
+                    }
+                });
+            }
+        });
+
     }
 }

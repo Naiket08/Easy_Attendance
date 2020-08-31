@@ -8,4 +8,6 @@
     <string name="alreadyaccount">Already have \nan account?</string>
     <string name="newuser">New User?</string>
     <string name="signup"><u>Sign up</u></string>
+    <string name="AlreadyHaveanAccount">Already Have an Account?</string>
+    <string name="loginHere"><u>Login Here</u></string>
 </resources>
