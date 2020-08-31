@@ -7,7 +7,21 @@
     android:background="@drawable/loginscreenbackground"
     tools:context=".LoginScreen">
 
-    <ImageView
+    <TextView
+        android:id="@+id/textViewWelcometoeasyattendance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Welcometoeasyattendance"
+        android:textColor="#FFF"
+        android:fontFamily="@font/segoe_ui"
+        android:textSize="@dimen/_25ssp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <!--<ImageView
         android:id="@+id/imageViewRegisterPerson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,7 +29,7 @@
         android:layout_marginTop="@dimen/_70sdp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"/>-->
 
     <EditText
         android:id="@+id/editTextRegisterName"
@@ -29,8 +43,8 @@
         android:fontFamily="@font/segoe_ui"
         android:drawableLeft="@drawable/ic_baseline_name_icon"
         android:drawablePadding="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_20sdp"
-        app:layout_constraintTop_toBottomOf="@id/imageViewRegisterPerson"
+        android:layout_marginTop="@dimen/_50sdp"
+        app:layout_constraintTop_toBottomOf="@id/textViewWelcometoeasyattendance"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -94,7 +108,7 @@
         android:textAllCaps="true"
         android:letterSpacing="0.05"
         android:background="@drawable/loginbuttonbackground"
-        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_40sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextRegisterPassword"/>
@@ -103,7 +117,7 @@
         android:id="@+id/textViewHaveAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_30sdp"
         android:layout_marginEnd="@dimen/_10sdp"
         android:text="@string/AlreadyHaveanAccount"
         android:textColor="#FFFFFF"

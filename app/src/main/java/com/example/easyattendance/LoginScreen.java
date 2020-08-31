@@ -92,7 +92,7 @@ public class LoginScreen extends AppCompatActivity {
                             startActivity(new Intent(LoginScreen.this, HomeScreen.class));
                         }
                         else{
-                            Toast.makeText(LoginScreen.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginScreen.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBarLoginScreen.setVisibility(View.INVISIBLE);
                         }
                     }

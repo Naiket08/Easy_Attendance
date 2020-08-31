@@ -33,8 +33,7 @@ import io.opencensus.tags.Tag;
 public class RegisterScreen extends AppCompatActivity {
 
     public static final String TAG = "TAG";
-    ImageView imageViewRegisterPerson;
-    TextView textViewHaveAccount, textViewLogin;
+    TextView textViewHaveAccount, textViewLogin, textViewWelcometoeasyattendance;
     EditText editTextRegisterName, editTextRegisterMobile, editTextRegisterEmail, editTextRegisterPassword;
     Button buttonRegister;
     ProgressBar progressBar;
@@ -49,7 +48,7 @@ public class RegisterScreen extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_register_screen);
 
-        imageViewRegisterPerson = (ImageView)findViewById(R.id.imageViewRegisterPerson);
+        textViewWelcometoeasyattendance = (TextView)findViewById(R.id.textViewWelcometoeasyattendance);
         textViewHaveAccount = (TextView)findViewById(R.id.textViewHaveAccount);
         textViewLogin = (TextView)findViewById(R.id.textViewLogin);
         editTextRegisterName = (EditText)findViewById(R.id.editTextRegisterName);
@@ -114,7 +113,7 @@ public class RegisterScreen extends AppCompatActivity {
                             startActivity(new Intent(RegisterScreen.this,HomeScreen.class));
                         }
                         else {
-                            Toast.makeText(RegisterScreen.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterScreen.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.INVISIBLE);
                         }
                     }
