@@ -50,7 +50,7 @@ public class LoginScreen extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
 
         if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(LoginScreen.this,HomeScreen.class));
+            startActivity(new Intent(LoginScreen.this,MainScreen.class));
             finish();
         }
 
