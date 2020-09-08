@@ -34,7 +34,7 @@ public class RegisterScreen extends AppCompatActivity {
 
     public static final String TAG = "TAG";
     TextView textViewHaveAccount, textViewLogin, textViewWelcometoeasyattendance;
-    EditText editTextRegisterName, editTextRegisterMobile, editTextRegisterEmail, editTextRegisterPassword;
+    EditText editTextRegisterName, editTextRegisterMobile, editTextRegisterEmail, editTextRegisterPassword, editTextBranch;
     Button buttonRegister;
     ProgressBar progressBar;
     private FirebaseAuth firebaseAuth;
@@ -53,6 +53,7 @@ public class RegisterScreen extends AppCompatActivity {
         textViewLogin = (TextView)findViewById(R.id.textViewLogin);
         editTextRegisterName = (EditText)findViewById(R.id.editTextRegisterName);
         editTextRegisterMobile = (EditText)findViewById(R.id.editTextRegisterMobile);
+        editTextBranch = (EditText)findViewById(R.id.editTextBranch);
         editTextRegisterEmail = (EditText)findViewById(R.id.editTextRegisterEmail);
         editTextRegisterPassword = (EditText)findViewById(R.id.editTextRegisterPassword);
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
@@ -76,6 +77,7 @@ public class RegisterScreen extends AppCompatActivity {
                 String pwd = editTextRegisterPassword.getText().toString().trim();
                 final String name = editTextRegisterName.getText().toString();
                 final String mobileno = editTextRegisterMobile.getText().toString();
+                final String branch = editTextBranch.getText().toString();
 
                 if(TextUtils.isEmpty(email)){
                     editTextRegisterEmail.setError("Email ID is required");
@@ -103,6 +105,7 @@ public class RegisterScreen extends AppCompatActivity {
                             Map<String,Object> user = new HashMap<>();
                             user.put("Name",name);
                             user.put("Mobile No.",mobileno);
+                            user.put("Branch", branch);
                             user.put("Email ID",email);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
