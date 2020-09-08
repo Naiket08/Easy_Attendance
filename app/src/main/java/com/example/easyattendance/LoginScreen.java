@@ -89,7 +89,7 @@ public class LoginScreen extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginScreen.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(LoginScreen.this, HomeScreen.class));
+                            startActivity(new Intent(LoginScreen.this, MainScreen.class));
                         }
                         else{
                             Toast.makeText(LoginScreen.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();

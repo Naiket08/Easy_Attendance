@@ -110,7 +110,7 @@ public class RegisterScreen extends AppCompatActivity {
                                     Log.d(TAG,"onSuccess : user profile is created for "+ userID );
                                 }
                             });
-                            startActivity(new Intent(RegisterScreen.this,HomeScreen.class));
+                            startActivity(new Intent(RegisterScreen.this,MainScreen.class));
                         }
                         else {
                             Toast.makeText(RegisterScreen.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();

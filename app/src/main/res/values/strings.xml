@@ -19,7 +19,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_addCC">Add Class Counsellor</string>
+    <string name="menu_addStudent">Add Student</string>
+    <string name="menu_takeattendance">Take Attendance</string>
 </resources>
