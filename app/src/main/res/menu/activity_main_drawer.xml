@@ -16,5 +16,10 @@
             android:id="@+id/takeattendance"
             android:icon="@drawable/ic_take_attendance"
             android:title="@string/menu_takeattendance" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/menu_logout" />
+
     </group>
 </menu>

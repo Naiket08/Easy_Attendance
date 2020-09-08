@@ -9,6 +9,7 @@ import android.view.Menu;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -66,6 +67,7 @@ public class MainScreen extends AppCompatActivity implements NavigationView.OnNa
     }
 
     @Override
+    //navigation item select
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.addcc:
@@ -83,13 +85,17 @@ public class MainScreen extends AppCompatActivity implements NavigationView.OnNa
                 navigationView.setCheckedItem(R.id.takeattendance);
                 setTitle("Take Attendance");
                 break;
+            case R.id.logout:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(MainScreen.this,LoginScreen.class));
+                finish();
 
         }
 
         drawer.closeDrawer(GravityCompat.START);
         return false;
     }
-
+    //onbackpress is require
 
 
 }
